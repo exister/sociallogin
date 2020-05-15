@@ -54,7 +54,7 @@ class CustomOpenIDConnect extends OAuth2
             }
         }
 
-        if ($idScope !== null) {
+        if (!empty($idScope)) {
 			if($data->get($idScope) === null) {
 				$profile = new Data\Collection($this->apiRequest($userInfoUrl));
 				$id = $profile->get($idScope);
